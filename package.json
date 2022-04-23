@@ -1,0 +1,47 @@
+{
+  "name": "timeconverter",
+  "version": "1.0.0",
+  "description": "",
+  "source": "./src/index.pug",
+  "types": "docs/index.d.ts",
+  "targets": {
+    "default": {
+      "distDir": "./docs"
+    },
+    "module": false,
+    "main": false,
+    "types": false
+  },
+  "scripts": {
+    "build": "rimraf docs && parcel build src/index.pug --no-source-maps --dist-dir docs --public-url /timeconverter && cp favicon.ico docs/",
+    "start": "parcel --https",
+    "dev": "parcel serve --open",
+    "lint": "eslint",
+    "check": "tsc --noEmit"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kane-thornwyrd/timeconverter.git"
+  },
+  "author": "Kane <jean.cedric.t@gmail.com> (jean-cédric)",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/kane-thornwyrd/timeconverter/issues"
+  },
+  "homepage": "https://github.com/kane-thornwyrd/timeconverter#readme",
+  "devDependencies": {
+    "@parcel/babel-preset-env": "2.5.0",
+    "@parcel/transformer-pug": "2.5.0",
+    "@parcel/transformer-sass": "2.5.0",
+    "@types/luxon": "2.3.1",
+    "parcel": "2.5.0",
+    "rimraf": "3.0.2"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "dependencies": {
+    "luxon": "2.3.2"
+  }
+}
